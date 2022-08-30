@@ -15,6 +15,6 @@ generator js {
 model tog_character {
   id       Int    @id @default(autoincrement())
   name     String @db.VarChar(255)
-  affiliation  String @db.VarChar(255)
+  affiliation  String? @db.VarChar(255)
   image    String? @db.VarChar(255)
 }
