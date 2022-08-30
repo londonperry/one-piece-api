@@ -12,7 +12,7 @@ generator js {
   previewFeatures = ["referentialIntegrity"]
 }
 
-model tog_character {
+model op_character {
   id       Int    @id @default(autoincrement())
   name     String @db.VarChar(255)
   affiliation  String? @db.VarChar(255)
