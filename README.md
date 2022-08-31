@@ -33,7 +33,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-Push Prisma Schema to PlanetScale: npx prisma db push
-Open Local Prisma Studio: npx prisma studio
-Save Characters to PlanetScale: npm run seed
-Run Next Dev Server: npm run dev
+- Push Prisma Schema to PlanetScale: ```npx prisma db push```
+- Open Local Prisma Studio: ```npx prisma studio```
+- Save Characters to PlanetScale: ```npm run seed```
+- Run Next Dev Server: ```npm run dev```
