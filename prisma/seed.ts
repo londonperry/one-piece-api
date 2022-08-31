@@ -42,7 +42,7 @@ const loadCharacters = async () => {
 };
 
 const characterNames = [
-    `Abdullah`,
+`Abdullah`,
 `Absalom`,
 `Acilia`,
 `Adele`,
