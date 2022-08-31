@@ -16,7 +16,7 @@ const handler = async(req: NextApiRequest, res: NextApiResponse) => {
         });
     }
 
-    const character = await prisma.op_character.findUnique({
+    const character = await prisma?.op_character.findUnique({
         where: {
             id: idNum
         }
