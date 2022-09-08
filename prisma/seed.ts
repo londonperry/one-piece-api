@@ -11,7 +11,29 @@ const getCharacterInfo = async (characterName: string): Promise<Prisma.op_charac
     const { data } = await axios.get(`https://onepiece.fandom.com/wiki/${characterName}`);
     const $ = cheerio.load(data);
     let name = $('div[data-source="full name"] > div.pi-data-value.pi-font').text();
+    let japanese_name = $('div[data-source="jname"] > div.pi-data-value.pi-font').text();
+    const debut = $('div[data-source="first"] > div.pi-data-value.pi-font').text();
     const affiliation = $('div[data-source="affiliation"] > div.pi-data-value.pi-font').text();
+    const occupation = $('div[data-source="occupation"] > div.pi-data-value.pi-font').text();
+    const origin = $('div[data-source="origin"] > div.pi-data-value.pi-font').text();
+    const residence = $('div[data-source="residence"] > div.pi-data-value.pi-font').text();
+    const alias = $('div[data-source="alias"] > div.pi-data-value.pi-font').text();
+    const epithet = $('div[data-source="epithet"] > div.pi-data-value.pi-font').text();
+    const status = $('div[data-source="status"] > div.pi-data-value.pi-font').text();
+    const age = $('div[data-source="age"] > div.pi-data-value.pi-font').text();
+    const birthday = $('div[data-source="birth"] > div.pi-data-value.pi-font').text();
+    const height = $('div[data-source="height"] > div.pi-data-value.pi-font').text();
+    const blood_type = $('div[data-source="blood type"] > div.pi-data-value.pi-font').text();
+    const bounty = $('div[data-source="bounty"] > div.pi-data-value.pi-font').text();
+    const japanese_va = $('div[data-source="jva"] > div.pi-data-value.pi-font').text();
+    const odex_english_va = $('div[data-source="Odex eva"] > div.pi-data-value.pi-font').text();
+    const kids_english_va = $('div[data-source="4kids eva"] > div.pi-data-value.pi-font').text();
+    const funimation_english_va = $('div[data-source="Funi eva"] > div.pi-data-value.pi-font').text();
+    const live_action_actor = $('div[data-source="liveaction"] > div.pi-data-value.pi-font').text();
+    const devil_fruit_japanese_name = $('div[data-source="dfname"] > div.pi-data-value.pi-font').text();
+    const devil_fruit_english_name = $('div[data-source="dfename"] > div.pi-data-value.pi-font').text();
+    const devil_fruit_meaning = $('div[data-source="dfmeaning"] > div.pi-data-value.pi-font').text();
+    const devil_fruit_type = $('div[data-source="dftype"] > div.pi-data-value.pi-font').text();
     const image = $('.image.image-thumbnail > img').attr('src');
     if (!name) {
         const parts = characterName.split('/');
@@ -20,7 +42,29 @@ const getCharacterInfo = async (characterName: string): Promise<Prisma.op_charac
     }
     const characterInfo: Prisma.op_characterCreateInput = {
         name,
+        japanese_name,
+        debut,
         affiliation,
+        occupation,
+        origin,
+        residence,
+        alias,
+        epithet,
+        status,
+        age,
+        birthday,
+        height,
+        blood_type,
+        bounty,
+        japanese_va,
+        odex_english_va,
+        kids_english_va,
+        funimation_english_va,
+        live_action_actor,
+        devil_fruit_japanese_name,
+        devil_fruit_english_name,
+        devil_fruit_meaning,
+        devil_fruit_type,
         image,
     };
     return characterInfo;
