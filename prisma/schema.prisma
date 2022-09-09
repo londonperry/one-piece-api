@@ -37,3 +37,4 @@ model op_character {
   devil_fruit_type String? @db.VarChar(255)
   image       String? @db.VarChar(255)
 }
+ 
